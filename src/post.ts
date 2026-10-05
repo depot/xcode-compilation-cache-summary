@@ -64,7 +64,7 @@ async function run() {
 
   if (stats.key_hits + stats.key_misses + stats.key_errors === 0) {
     core.info(
-      'Depot Xcode compilation cache: no compilations used the cache. Set DEPOT_XCODE_CACHE_ENABLED to enable it',
+      'Depot Xcode compilation cache: no compilations used the cache. It needs Xcode 26 or later, and is off when DEPOT_XCODE_CACHE_ENABLED is 0 or false',
     )
     return
   }
