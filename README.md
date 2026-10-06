@@ -4,7 +4,7 @@ Summarize the Xcode compilation cache on Depot macOS runners. At the end of the 
 
 Requires Xcode 26 or later.
 
-> The cache itself is set up by the Depot runner, not by this action. While the cache is in beta, enable it by setting `DEPOT_XCODE_CACHE_ENABLED` for the job or step that runs `xcodebuild`.
+> The cache itself is set up by the Depot runner, not by this action, and is on by default. To turn it off, set `DEPOT_XCODE_CACHE_ENABLED` to `0` or `false` for the job or step that runs `xcodebuild`. A step that sets its own `XCODE_XCCONFIG_FILE` also runs without the cache.
 
 > On runners without the Depot Xcode compilation cache, including GitHub-hosted runners, the action does nothing.
 
@@ -14,8 +14,6 @@ Requires Xcode 26 or later.
 jobs:
   build:
     runs-on: depot-macos-latest
-    env:
-      DEPOT_XCODE_CACHE_ENABLED: 1
     steps:
       - uses: actions/checkout@v7
       - uses: depot/xcode-compilation-cache@v1
