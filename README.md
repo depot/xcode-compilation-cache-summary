@@ -16,13 +16,13 @@ jobs:
     runs-on: depot-macos-latest
     steps:
       - uses: actions/checkout@v7
-      - uses: depot/xcode-compilation-cache@v1
 
       - name: Build
         run: xcodebuild -workspace App.xcworkspace -scheme App build
+      - uses: depot/xcode-compilation-cache-summary@v1
 ```
 
-Add the action before the build. Its summary is written in a post step, which runs at the end of the job, even when the build fails.
+Add it after your build step. The action collects statistics at the end of the job. Its summary is written in a post step, which runs at the end of the job, even when the build fails.
 
 ## Inputs
 
