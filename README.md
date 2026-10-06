@@ -1,4 +1,4 @@
-# xcode-compilation-cache-summary (BETA)
+# xcode-compilation-cache-summary
 
 Summarize the Xcode compilation cache on Depot macOS runners. At the end of the job, the action logs the cache's hits, misses and hit rate, and adds them to the job summary.
 
