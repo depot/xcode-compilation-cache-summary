@@ -20,6 +20,11 @@
     "prettier-plugin-pkg": "^0.18.0",
     "typescript": "5.9.3"
   },
+  "pnpm": {
+    "overrides": {
+      "undici": "^6.29.1"
+    }
+  },
   "prettier": {
     "bracketSpacing": false,
     "printWidth": 120,
